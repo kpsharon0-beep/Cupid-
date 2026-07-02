@@ -86,6 +86,23 @@ setTimeout(()=>h.remove(),10000);
 
 startBtn.onclick=function(){
 
+    let error = validateName(yourName.value);
+
+if(error){
+alert("❌ " + error);
+return;
+}
+
+error = validateName(crushName.value);
+
+if(error){
+alert("❌ " + error);
+return;
+}
+
+yourName.value = formatName(yourName.value);
+crushName.value = formatName(crushName.value);
+
 if(yourName.value.trim()===""||crushName.value.trim()===""){
 
 alert("Please enter both names ❤️");
