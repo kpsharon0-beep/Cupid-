@@ -185,6 +185,16 @@ clearInterval(timer);
 
 loading.classList.add("hidden");
 
+const score = Math.floor(Math.random() * 55) + 45;
+
+document.querySelector(".matchCircle").textContent = score + "%";
+
+matchCard.querySelector("h2").textContent =
+`${yourName.value} ❤️ ${crushName.value}`;
+
+matchCard.querySelector("p").innerHTML =
+`Cupid found a compatibility of <b>${score}%</b>.`;
+
 matchCard.classList.remove("hidden");
 
 }
