@@ -15,7 +15,45 @@ const confetti = document.getElementById("confetti");
 
 const yourName = document.getElementById("yourName");
 const crushName = document.getElementById("crushName");
+const blockedWords = [
+"phone","mobile","car","bus","bike","train","truck",
+"apple","samsung","xiaomi","oppo","vivo","realme",
+"oneplus","nokia","hp","dell","lenovo","acer","asus",
+"bmw","audi","tesla","toyota","ford","kia","honda",
+"google","amazon","youtube","instagram","facebook",
+"whatsapp","you","me","my","myself","yourself",
+"qwerty","admin","test","null","unknown","love",
+"crush","lover","cupid"
+];
 
+function formatName(name){
+    return name
+        .trim()
+        .toLowerCase()
+        .replace(/\b\w/g, c => c.toUpperCase());
+}
+
+function validateName(name){
+
+    name = name.trim();
+
+    if(name.length < 2)
+        return "Name must contain at least 2 letters.";
+
+    if(name.length > 15)
+        return "Name is too long.";
+
+    if(!/^[A-Za-z ]+$/.test(name))
+        return "Only letters and spaces are allowed.";
+
+    if(name.split(" ").length > 2)
+        return "Please enter only one name.";
+
+    if(blockedWords.includes(name.toLowerCase()))
+        return "Please enter a real person's name.";
+
+    return "";
+}
 const steps = [
 document.getElementById("step1"),
 document.getElementById("step2"),
