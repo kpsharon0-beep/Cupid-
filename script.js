@@ -23,7 +23,12 @@ const blockedWords = [
 "google","amazon","youtube","instagram","facebook",
 "whatsapp","you","me","my","myself","yourself",
 "qwerty","admin","test","null","unknown","love",
-"crush","lover","cupid"
+"crush","lover","cupid",
+
+"fuck","fucking","shit","bitch","ass","asshole",
+"sex","sexy","nude","porn","gay","lesbian",
+"idiot","stupid","kill","dead","hate","bro",
+"sis","mom","dad","mother","father","baby"
 ];
 
 function formatName(name){
@@ -37,7 +42,7 @@ function validateName(name){
 
     name = name.trim();
 
-    if(name.length < 2)
+    if(name.length < 3)
         return "Name must contain at least 2 letters.";
 
     if(name.length > 15)
